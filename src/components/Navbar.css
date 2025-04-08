@@ -1,0 +1,136 @@
+/* รีเซ็ตเบื้องต้น */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Prompt', sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+}
+
+/* Navbar container */
+.navbar-container {
+    width: 100%;
+    background-color: #ffffff;
+    font-family: 'Prompt', sans-serif;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Top navbar */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #003366; /* เปลี่ยนสีให้เข้มขึ้น */
+    padding: 12px 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15); /* เพิ่มเงาเล็กน้อย */
+    
+}
+
+/* Left: Hamburger + Logo */
+.navbar-left {
+    display: flex;
+    align-items: center;
+}
+
+.hamburger-menu {
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: #ffffff;
+    cursor: pointer;
+    margin-right: 15px;
+    transition: color 0.3s ease;
+}
+
+.hamburger-menu:hover {
+    color: #ffcc00; /* เปลี่ยนสีเมื่อ hover */
+}
+
+.logo img {
+    height: 45px; /* ปรับขนาด logo */
+    object-fit: contain;
+}
+
+/* Center: Search box */
+.navbar-center {
+    flex: 1;
+    margin: 0 20px;
+}
+
+.search-box {
+    display: flex;
+    background-color: #f1f1f1;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.search-box input {
+    flex: 1;
+    padding: 12px 18px;
+    border: none;
+    background: transparent;
+    outline: none;
+    font-size: 16px;
+}
+
+.search-box button {
+    background: transparent;
+    border: none;
+    padding: 0 15px;
+    cursor: pointer;
+    background-color: #003366;
+    color: white;
+    border-radius: 30px;
+    transition: background-color 0.3s ease;
+}
+
+.search-box button:hover {
+    background-color: #ffcc00; /* เปลี่ยนสีปุ่มเมื่อ hover */
+}
+
+/* Right: Cart + User */
+.navbar-right {
+    display: flex;
+    gap: 20px;
+}
+
+.cart-icon,
+.user-icon {
+    color: #ffffff;
+    font-size: 22px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.cart-icon:hover,
+.user-icon:hover {
+    color: #ffcc00;
+}
+
+/* Secondary menu */
+.secondary-menu {
+    display: flex;
+    justify-content: space-around;
+    padding: 15px 0;
+    background-color: #ffffff;
+    border-top: 2px solid #f1f1f1;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+
+}
+
+.secondary-menu a {
+    text-decoration: none;
+    color: #333333;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.secondary-menu a:hover {
+    color: #003366; /* เปลี่ยนสีเมื่อลอยเหนือ */
+}

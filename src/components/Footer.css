@@ -1,0 +1,54 @@
+.footer {
+    background-color: #1f2937;
+    color: #f3f4f6;
+    padding: 40px 20px 20px;
+    font-family: 'Segoe UI', sans-serif;
+    width: 100%;
+    position: relative; /* ✅ ไม่ลอย */
+    bottom: 0;
+    margin-top: 50px; /* ✅ ดัน footer ให้อยู่ห่างจากเนื้อหา */
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-section h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #fbbf24;
+}
+
+.footer-section p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 5px 0;
+}
+
+.social-icons a img {
+    width: 28px;
+    margin-right: 10px;
+    transition: transform 0.3s ease;
+}
+
+.social-icons a:hover img {
+    transform: scale(1.1);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #374151;
+    font-size: 14px;
+    margin-top: 20px;
+}

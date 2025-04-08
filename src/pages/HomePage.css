@@ -1,0 +1,519 @@
+.add-to-cart-button {
+  background-color: #10b981;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  font-size: 14px;
+  border-radius: 8px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.add-to-cart-button:hover {
+  background-color: #059669;
+}
+
+.cart-confirmation {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.cart-confirmation button {
+  margin: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #3b82f6;
+  border: none;
+  color: white;
+}
+
+.cart-confirmation button:hover {
+  background-color: #2563eb;
+}
+
+/* ส่วนของ popular-item */
+.popular-item,
+.category-item {
+    background-color: #ffffff;
+    padding: 16px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 220px; /* ขนาดการ์ดให้เท่ากัน */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 0 10px;
+}
+
+.popular-item:hover,
+.category-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}
+
+/* การตั้งค่าสำหรับรูปภาพในการ์ด */
+.img-box {
+    height: 120px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* ปรับให้ข้อความและปุ่มมีลักษณะเดียวกัน */
+.popular-item p,
+.category-item p {
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* ปุ่มในการ์ด */
+.popular-button,
+.category-button,
+.add-to-cart-button {
+    margin-top: 10px;
+    padding: 8px 16px;
+    font-size: 14px;
+    border-radius: 8px;
+    background-color: #003366;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%; /* ให้ปุ่มมีความกว้างเต็มการ์ด */
+}
+
+.popular-button:hover,
+.category-button:hover,
+.add-to-cart-button:hover {
+    background-color: #2563eb;
+}
+
+/* ส่วนของ scroll สำหรับ popular และ category */
+.popular-scroll,
+.category-scroll {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding-top: 10px;
+}
+
+.popular-scroll::-webkit-scrollbar,
+.category-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+  
+.category-section {
+    padding: 32px 24px;
+    background-color: #ffffff;
+}
+
+.category-section h3 {
+    font-size: 22px;
+    margin-bottom: 16px;
+    color: #111827;
+}
+
+.category-scroll {
+    display: flex;
+    overflow-x: auto;
+    gap: 16px;
+    padding-bottom: 12px;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+}
+
+.category-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.category-item {
+    min-width: 160px;
+    background-color: #fafafa;
+    border-radius: 14px;
+    text-align: center;
+    padding: 16px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    scroll-snap-align: start;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.category-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+}
+
+.category-item .img-box {
+    width: 100%;
+    height: 140px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 10px;
+    background-color: #f9fafb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.category-item .img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.category-item p {
+    font-size: 16px;
+    font-weight: 500;
+    color: #111827;
+    margin: 10px 0;
+}
+
+.category-button {
+    background-color: #003366;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    font-size: 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: auto;
+}
+
+.category-button:hover {
+    background-color: #2563eb;
+}
+
+.promo-banner {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.custom-slider {
+    position: relative;
+    overflow: hidden;
+}
+
+.promo-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 28px;
+    padding: 10px 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1;
+    transition: background 0.3s ease;
+}
+
+.slider-btn.left {
+    left: 15px;
+}
+
+.slider-btn.right {
+    right: 15px;
+}
+
+.slider-btn:hover {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.slider-dots {
+    margin-top: 10px;
+}
+
+.dot {
+    height: 12px;
+    width: 12px;
+    margin: 0 6px;
+    background-color: #ccc;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dot.active,
+.dot:hover {
+    background-color: #333;
+}
+
+/* สไตล์สำหรับ container หลัก */
+.homepage-container {
+    background-color: #f0f2f5;
+    font-family: 'Prompt', sans-serif;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 16px;
+    box-sizing: border-box;
+    gap: 20px;
+}
+
+/* แบนเนอร์โปรโมชัน */
+.promo-banner {
+    margin-bottom: 20px;
+}
+
+/* สไตล์ของภาพในแบนเนอร์ */
+.promo-banner img,
+.promo-banner .promo-image {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    object-fit: cover; /* ทำให้ภาพไม่บิดเบี้ยว */
+}
+
+.promo-banner img:hover,
+.promo-banner .promo-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+}
+
+/* เมนูหลัก */
+.main-menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #1a1a4f;
+    padding: 14px 24px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    gap: 20px;
+}
+
+.menu-button {
+    flex: 1 1 45%;
+    padding: 18px;
+    margin: 0 8px;
+    border: none;
+    border-radius: 25px;
+    background: linear-gradient(to right, #ffffff, #f0f0f0);
+    font-weight: 600;
+    color: #1a1a1a;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-button:hover {
+    background: #dfe6ff;
+    color: #00003c;
+    transform: scale(1.1);
+}
+
+.menu-button.active {
+    background-color: #ffcc00;
+    color: #000;
+    box-shadow: 0 4px 8px rgba(255, 204, 0, 0.5);
+}
+
+.menu-icon {
+    width: 40px;
+    height: auto;
+    margin-bottom: 8px;
+}
+
+/* ส่วนของ popular */
+.popular-section {
+    padding: 24px;
+    background-color: #ffffff;
+}
+
+.popular-scroll {
+    display: flex;
+    overflow-x: auto;
+    gap: 16px;
+    padding-top: 12px;
+    scrollbar-width: none;
+}
+
+.popular-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.popular-item {
+    min-width: 120px;
+    background-color: #fafafa;
+    border-radius: 12px;
+    text-align: center;
+    padding: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.popular-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* รูปภาพในขั้นตอนการบริการ */
+.img-box {
+    height: 120px;
+   
+    margin-bottom: 8px;
+    border-radius: 8px;
+    display: flex; /* ทำให้กล่องเป็น flex container */
+    justify-content: center; /* จัดกลางในแนวนอน */
+    align-items: center; /* จัดกลางในแนวตั้ง */
+}
+
+.img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* ให้ภาพครอบคลุมโดยไม่บิดเบี้ยว */
+}
+
+/* หมวดหมู่ */
+.category-icons {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    justify-items: center;
+    padding: 24px;
+    background-color: #f7f7f7;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+
+.category-circle {
+    text-align: center;
+}
+
+.circle-img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: #e0e0e0;
+    margin-bottom: 6px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* ขั้นตอนการบริการ */
+.service-steps {
+    background-color: #f8f9fa;
+    padding: 28px;
+}
+
+.steps-boxes {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 16px;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.step-box {
+    background-color: #ffffff;
+    padding: 24px;
+    border-radius: 14px;
+    width: 30%;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+}
+
+.step-box:hover {
+    transform: translateY(-5px);
+}
+
+.step-box img {
+    max-width: 100px;
+    height: auto;
+    margin-bottom: 12px;
+    object-fit: contain;
+}
+
+/* คำถามที่พบบ่อย */
+.faq-section {
+    padding: 24px;
+    background-color: #f9f9f9;
+}
+
+.faq-box {
+    background-color: white;
+    padding: 24px;
+    border-radius: 14px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* แผนที่ */
+.map-section {
+    padding: 24px;
+    background-color: white;
+}
+
+.map-img {
+    width: 100%;
+    border-radius: 14px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Media query สำหรับ Desktop */
+@media (min-width: 1024px) {
+    .main-menu {
+        flex-wrap: nowrap;
+    }
+
+    .menu-button {
+        flex: 1 1 22%;
+        padding: 20px 0;
+    }
+
+    .popular-scroll {
+        gap: 32px;
+    }
+
+    .steps-boxes {
+        flex-wrap: nowrap;
+    }
+
+    .step-box {
+        width: 22%;
+    }
+
+    .category-icons {
+        grid-template-columns: repeat(6, 1fr);
+    }
+}
