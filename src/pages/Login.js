@@ -19,18 +19,18 @@ function Login() {
 
   return (
     <div className="login-container">
-      <h2>Login</h2>
+      <h2>เข้าสู่ระบบ</h2>
       <form onSubmit={handleLogin}>
         <input
           type="email"
-          placeholder="Email"
+          placeholder="อีเมล"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
         />
         <input
           type="password"
-          placeholder="Password"
+          placeholder="รหัสผ่าน"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
@@ -39,7 +39,7 @@ function Login() {
       </form>
 
       <div className="register-link">
-        <p>Don't have an account? <Link to="/register">Register here</Link></p>
+        <p>ยังไม่มีบัญชีผู้ใช้ ? <Link to="/register">สมัครสมาชิกที่นี่</Link></p>
       </div>
     </div>
   );
