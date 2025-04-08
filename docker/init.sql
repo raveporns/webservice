@@ -1,7 +1,6 @@
 -- ตารางผู้ใช้ (User)
 CREATE TABLE "users" (
     userID SERIAL PRIMARY KEY,
-    username VARCHAR(100) NOT NULL,
     email VARCHAR(100) UNIQUE NOT NULL,
     password VARCHAR(255),
     role VARCHAR(20) CHECK (role IN ('admin', 'affiliator')) DEFAULT 'affiliator'
@@ -52,7 +51,7 @@ CREATE TABLE "Log" (
     timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     referrer VARCHAR(255),
     parameter JSON,
-    FOREIGN KEY (userID) REFERENCES "users"(userID) ON DELETE SET NULL
+    FOREIGN KEY (userID) REFERENCES "User"(userID) ON DELETE SET NULL
 );
 
 -- ตารางเว็บ Affiliator
@@ -60,7 +59,7 @@ CREATE TABLE "AffiliatorSite" (
     siteID SERIAL PRIMARY KEY,
     userID INT,
     url VARCHAR(255),
-    FOREIGN KEY (userID) REFERENCES "users"(userID) ON DELETE CASCADE
+    FOREIGN KEY (userID) REFERENCES "User"(userID) ON DELETE CASCADE
 );
 
 

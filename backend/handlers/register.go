@@ -11,6 +11,8 @@ import (
 	"golang.org/x/crypto/bcrypt"
 )
 
+
+
 func Register(c *gin.Context) {
     if database.DB == nil {
         c.JSON(http.StatusInternalServerError, gin.H{"error": "Database connection not established"})
@@ -37,10 +39,10 @@ func Register(c *gin.Context) {
     }
 
     // เพิ่มผู้ใช้ใหม่ลงในฐานข้อมูล
-    insertQuery := "INSERT INTO users (email, password, role) VALUES ($1, $2, $3)"
-    _, err = database.DB.Exec(insertQuery, user.Email, hashedPassword)
+    insertQuery := "INSERT INTO \"users\" (email, password, role) VALUES ($1, $2, $3)"
+    _, err = database.DB.Exec(insertQuery, user.Email, hashedPassword, user.Role)
     if err != nil {
-        c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to register user"})
+        c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to register user", "details": err.Error()})
         return
     }
 
@@ -54,8 +56,9 @@ func Register(c *gin.Context) {
     c.JSON(http.StatusOK, gin.H{"token": token})
 }
 
+
 // Secret key สำหรับใช้เข้ารหัส Token (ควรเก็บไว้เป็นความลับ)
-var jwtSecret = []byte("your-secret-key")
+var jwtSecret = []byte("eyJhbGciOiJIUzUxMiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICIyYTQ0MGI5Yy1kODcxLTRiNTItOGE2OS1jMzRmODg1MjY5ZDcifQ.eyJleHAiOjE3NDQxOTYzNzAsImlhdCI6MTc0NDEwOTk3MCwianRpIjoiZTc1NTgyN2QtYmM5Ny00ZGYwLWEzMWItYTM4MGI0MGVmMDllIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgzL3JlYWxtcy93ZWJzZXJ2aWNlIiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgzL3JlYWxtcy93ZWJzZXJ2aWNlIiwidHlwIjoiSW5pdGlhbEFjY2Vzc1Rva2VuIn0.yuPbsVLXjLwig1CUsvEg4-7rrW7E0nHEkIBMB4vvjNKvShgYA5zliDoS4u9cz50irSwyTb0Yy-Tg359QdvTT1g")
 
 // generateToken สร้าง JWT โดยรับ email เป็น claim พร้อมตั้งเวลาหมดอายุ (exp)
 func generateToken(email string) (string, error) {

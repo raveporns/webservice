@@ -21,7 +21,7 @@ func hashPassword(password string) (string, error) {
 
 func Login(c *gin.Context) {
 	var loginData struct {
-		Username string `json:"username"`
+		Username string `json:"email"`
 		Password string `json:"password"`
 	}
 	if err := c.ShouldBindJSON(&loginData); err != nil {

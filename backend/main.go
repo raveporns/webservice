@@ -23,6 +23,7 @@ func main() {
 
 	// Endpoint สำหรับการลงทะเบียน (register)
 	r.POST("/register", handlers.Register)
+	r.GET("/user", handlers.GetUsers)
 
 	// Endpoint สำหรับการเข้าสู่ระบบ (login)
 	r.POST("/login", handlers.Login)
@@ -59,13 +60,13 @@ func main() {
 
 		protected.GET("/user", handlers.GetUsers)
 		protected.GET("/user/:id", handlers.GetUserByID)
-		protected.POST("/user/", handlers.CreateUser)
+		// protected.POST("/register", handlers.CreateUser)
 		protected.PUT("/user/:id", handlers.EditUser)
 		protected.DELETE("/user/:id", handlers.DeleteUser)
 
 		protected.GET("/schedule", handlers.GetSchedules)
 		protected.GET("/schedule/:id", handlers.GetScheduleByID)
-		protected.POST("/schedule/", handlers.CreateSchedule)
+		protected.POST("/schedule", handlers.CreateSchedule)
 		protected.PUT("/schedule/:id", handlers.EditSchedule)
 		protected.DELETE("/schedule/:id", handlers.DeleteSchedule)
 
