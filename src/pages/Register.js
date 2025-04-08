@@ -22,7 +22,8 @@ function Register() {
     // สร้าง object ข้อมูลที่จะส่งไป
     const userData = {
       email: email,
-      password: password
+      password: password,
+      role:"member"
     };
 
     try {
@@ -32,7 +33,7 @@ function Register() {
       if (response.status === 200) {
         // ลงทะเบียนสำเร็จ ให้ไปที่หน้า Login
         console.log('Registration successful:', response.data);
-        navigate('/login');
+        navigate('/user/login');
       }
     } catch (error) {
       console.error('Error during registration:', error);
@@ -46,26 +47,26 @@ function Register() {
       <form onSubmit={handleRegister}>
         <input
           type="email"
-          placeholder="Email"
+          placeholder="อีเมล"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
         />
         <input
           type="password"
-          placeholder="Password"
+          placeholder="รหัสผ่าน"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
         />
         <input
           type="password"
-          placeholder="Confirm Password"
+          placeholder="รหัสยืนยัน"
           value={confirmPassword}
           onChange={(e) => setConfirmPassword(e.target.value)}
           required
         />
-        <button type="submit">Register</button>
+        <button type="submit">สมัครสมาชิก</button>
       </form>
     </div>
   );

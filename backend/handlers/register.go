@@ -58,7 +58,7 @@ func Register(c *gin.Context) {
 
 
 // Secret key สำหรับใช้เข้ารหัส Token (ควรเก็บไว้เป็นความลับ)
-var jwtSecret = []byte("eyJhbGciOiJIUzUxMiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICIyYTQ0MGI5Yy1kODcxLTRiNTItOGE2OS1jMzRmODg1MjY5ZDcifQ.eyJleHAiOjE3NDQxOTYzNzAsImlhdCI6MTc0NDEwOTk3MCwianRpIjoiZTc1NTgyN2QtYmM5Ny00ZGYwLWEzMWItYTM4MGI0MGVmMDllIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgzL3JlYWxtcy93ZWJzZXJ2aWNlIiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgzL3JlYWxtcy93ZWJzZXJ2aWNlIiwidHlwIjoiSW5pdGlhbEFjY2Vzc1Rva2VuIn0.yuPbsVLXjLwig1CUsvEg4-7rrW7E0nHEkIBMB4vvjNKvShgYA5zliDoS4u9cz50irSwyTb0Yy-Tg359QdvTT1g")
+var jwtSecret = []byte("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAYWRtaW4uY29tIiwiZXhwIjoxNzQ0MzkzNDAxfQ.iqlX2B5_QeloLtx5pCga4jYi70x4Ztcsv8he0Mwlbi4")
 
 // generateToken สร้าง JWT โดยรับ email เป็น claim พร้อมตั้งเวลาหมดอายุ (exp)
 func generateToken(email string) (string, error) {

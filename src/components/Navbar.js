@@ -44,10 +44,10 @@ function Navbar() {
                         <FontAwesomeIcon icon={faUser} size="lg" className="user-icon" />
                         {isDropdownOpen && (
                             <div className="dropdown-menu">
-                                <Link to="/login">เข้าสู่ระบบ</Link>
-                                <Link to="/register">สมัครสมาชิก</Link>
-                                <Link to="/logout">สมัครเป็นหุ้นส่วน</Link>
-                                <Link to="/logout">ออกจากระบบ</Link>
+                                <Link to="/user/login">เข้าสู่ระบบ</Link>
+                                <Link to="/user/register">สมัครสมาชิก</Link>
+                                <Link to="/partner/register">สมัครเป็นหุ้นส่วน</Link>
+                                <Link to="/user/login">ออกจากระบบ</Link>
                             </div>
                         )}
                     </div>

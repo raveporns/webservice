@@ -33,24 +33,7 @@ services:
     environment:
       KEYCLOAK_ADMIN: ${KEYCLOAK_ADMIN}
       KEYCLOAK_ADMIN_PASSWORD: ${KEYCLOAK_ADMIN_PASSWORD}
-  # go_app:
-  #   build:
-  #     context: .
-  #     dockerfile: Dockerfile
-  #   environment:
-  #     POSTGRES_DB: ${POSTGRES_DB}
-  #     POSTGRES_USER: ${POSTGRES_USER}
-  #     POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
-  #   env_file:
-  #     - .env
-  #   depends_on:
-  #     db : 
-  #       condition: service_healthy
-  #   ports:
-  #     - "8081:8081"
-  #   volumes:
-  #     - .:/app
-  #     - ./.env:/root/.env  # เชื่อมโยงไฟล์ .env กับ Go app
+
 
 volumes:
   my_postgres_data:

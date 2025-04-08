@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom';  // เพิ่มการนำเข้า Link
+import { useNavigate, Link } from 'react-router-dom';
+import axios from 'axios'; // Import axios
 import './Login.css';
 
 function Login() {
@@ -8,14 +9,24 @@ function Login() {
 
   const navigate = useNavigate();  // Hook เพื่อใช้การนำทาง
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
-    // Add login logic here
-    console.log('Logging in with:', email, password);
-
-    // หลังจากล็อกอินเสร็จให้ไปหน้า HomePage
-    navigate('/');  // นำทางไปยังหน้า HomePage
+    console.log('Logging in with:', email, password);  // เพิ่มการ log ข้อมูลที่ส่งไป
+  
+    try {
+      const response = await axios.post('http://localhost:8082/login', { email, password });
+      const token = response.data.token;
+  
+      if (token) {
+        localStorage.setItem('authToken', token);
+        navigate('/');
+      }
+    } catch (error) {
+      console.error('Error during login:', error);
+      alert('Invalid credentials. Please try again.');
+    }
   };
+  
 
   return (
     <div className="login-container">
@@ -39,7 +50,7 @@ function Login() {
       </form>
 
       <div className="register-link">
-        <p>ยังไม่มีบัญชีผู้ใช้ ? <Link to="/register">สมัครสมาชิกที่นี่</Link></p>
+        <p>ยังไม่มีบัญชีผู้ใช้ ? <Link to="/user/register">สมัครสมาชิกที่นี่</Link></p>
       </div>
     </div>
   );

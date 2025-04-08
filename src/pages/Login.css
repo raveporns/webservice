@@ -35,3 +35,19 @@
     background-color: #2563eb;
   }
   
+  .login-container h2 {
+    color: #0a57a3; /* สีที่แตกต่างจากลูกค้า */
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  
+  .login-container {
+    border: 1px solid #e0e0e0;
+    padding: 2rem;
+    max-width: 400px;
+    margin: 3rem auto;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  }
+  
